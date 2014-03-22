@@ -1,23 +1,19 @@
 rsyslog Cookbook
 ================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook sets your rsyslog to forward logs to another rsyslog server that's listening on port 514. This is one of my first recipes so it's a bit rough.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+Tested on:
+  RHEL 6 / CentOS 6
 
 e.g.
 #### packages
-- `toaster` - rsyslog needs toaster to brown your bagel.
+- `rsyslog` - Default CentOS 6 logger  
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
 #### rsyslog::default
 <table>
   <tr>
@@ -27,29 +23,30 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rsyslog']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['rsyslog']['ipaddress']</tt></td>
+    <td>string</td>
+    <td>This is the IP address for the listening server</td>
+    <td><tt>10.13.37.23</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['config']</tt></td>
+    <td>string</td>
+    <td>This is where rsyslog.conf is located</td>
+    <td><tt>/etc/rsyslog.conf</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['service']</tt></td>
+    <td>string</td>
+    <td>rsyslog is the service</td>
+    <td><tt>rsyslog</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### rsyslog::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `rsyslog` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[rsyslog]"
-  ]
-}
-```
 
 Contributing
 ------------
@@ -65,4 +62,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Andrew Raymer 
