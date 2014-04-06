@@ -5,7 +5,11 @@ This file is used to list changes made in each version of the rsyslog cookbook.
 
 0.1.0
 -----
-- [your_name] - Initial release of rsyslog
+- [Andrew Raymer] - Initial release of rsyslog
+
+0.1.1
+-----
+- [Andrew Raymer] - Refactored code to a client - server cookbooks. Tested and works.
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
