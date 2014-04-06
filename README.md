@@ -23,28 +23,61 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['rsyslog']['ipaddress']</tt></td>
-    <td>string</td>
-    <td>This is the IP address for the listening server</td>
-    <td><tt>10.13.37.23</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['rsyslog']['config']</tt></td>
+    <td><tt>['rsyslog']['client']['config']</tt></td>
     <td>string</td>
     <td>This is where rsyslog.conf is located</td>
     <td><tt>/etc/rsyslog.conf</tt></td>
   </tr>
   <tr>
-    <td><tt>['rsyslog']['service']</tt></td>
+    <td><tt>['rsyslog']['client']['service']</tt></td>
     <td>string</td>
     <td>rsyslog is the service</td>
     <td><tt>rsyslog</tt></td>
   </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['ipaddress']</tt></td>
+    <td>string</td>
+    <td>This is the IP address for the listening server</td>
+    <td><tt>10.13.37.23</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['subnet']</tt></td>
+    <td>string</td>
+    <td>Your local subnet</td>
+    <td><tt>10.13.37.0/24</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['mysqlip']</tt></td>
+    <td>string</td>
+    <td>The IP address of your mysql server</td>
+    <td><tt>127.0.0.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['mysqldb']</tt></td>
+    <td>string</td>
+    <td>The database name of your rsyslog server</td>
+    <td><tt>Syslog</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['mysqluser']</tt></td>
+    <td>string</td>
+    <td>The username for your mysqluser</td>
+    <td><tt>root</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['rsyslog']['server']['mysqlpass']</tt></td>
+    <td>string</td>
+    <td>The password for the mysqluser</td>
+    <td><tt>secret</tt></td>
+  </tr>
 </table>
+
+Note: I don't know how to use encrytped databags yet so the password is currently plaintext. Keep that in mind
 
 Usage
 -----
-#### rsyslog::default
+#### rsyslog::client
+#### rsyslog::server
 
 Just include `rsyslog` in your node's `run_list`:
 
